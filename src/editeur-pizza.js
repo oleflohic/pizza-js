@@ -4,8 +4,16 @@ import {
   getNomSelonLangue as getNomSelonLangue
 } from './garnitures.js'
 
+/*
+export const MODES_EDITEUR = {
+  CREATION: 0,
+  MODIFICATION: 1
+}
+*/
+
 export default class EditeurPizzaUi {
-  constructor (div, listePizzas) {
+
+  constructor (div, listePizzas, mode) {
     this.champNomPizza = div.getElementById('nom_pizza')
     this.boutonCreerPizza = div.getElementById('creer_pizza')
     this.boutonEnregistrerPizza = div.getElementById('enregistrer_pizza')
@@ -14,6 +22,8 @@ export default class EditeurPizzaUi {
     this.pContenuPizza = div.getElementById('contenu_pizza')
     this.pizzaActive = null
     this.pizzas = listePizzas
+
+    // this.mode = mode
   }
 
   activerEditeurPizza () {
@@ -21,7 +31,7 @@ export default class EditeurPizzaUi {
     this.boutonCreerPizza.disabled = 'disabled'
     this.boutonEnregistrerPizza.disabled = null
     this.boutonAnnuler.disabled = null
-    var boutonActuel = this.zoneIngredients.childNodes
+    var boutonActuel = this.zoneIngredients.childNodes[0]
     while (boutonActuel) {
       boutonActuel.disabled = null
       boutonActuel = boutonActuel.nextSibling
@@ -36,9 +46,8 @@ export default class EditeurPizzaUi {
     this.boutonEnregistrerPizza.disabled = 'disabled'
     this.boutonAnnuler.disabled = 'disabled'
 
-    var boutonActuel = this.zoneIngredients.childNodes
+    var boutonActuel = this.zoneIngredients.childNodes[0]
     while (boutonActuel) {
-      console.log('B: ' + boutonActuel)
       boutonActuel.disabled = 'disabled'
       boutonActuel = boutonActuel.nextSibling
     }

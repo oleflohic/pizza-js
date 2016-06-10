@@ -33,6 +33,18 @@ class Pizza {
     return this
   }
 
+  getQuantitesGarnitures () {
+    var res = {}
+    for (var i = 0; i < this.garnitures.length; i++) {
+      if (!res[this.garnitures[i]]) {
+        res[this.garnitures[i]] = 1
+      } else {
+        res[this.garnitures[i]]++
+      }
+    }
+    return res
+  }
+
   cuire (temps = 1000) {
     return new Promise((resolve, reject) => {
       if (this.etatCuisson === ETATS_CUISSON.EN_CUISSON) return reject('Pizza déjà en cours de cuisson.')

@@ -19,7 +19,7 @@ const garnituresFr = {
   'MOZZARELLA':     'mozzarella',
   'CHAMPIGNONS':    'champignons',
   'JAMBON':         'jambon',
-  'OEUFS':          'oeufs',
+  'OEUFS':          'œufs',
   'ARTICHAUT':      'artichaut',
   'OLIVES_VERTES':  'olives vertes',
   'OIGNON':         'oignon',

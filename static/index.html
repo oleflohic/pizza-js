@@ -1,36 +1,85 @@
 <html>
   <head>
     <title>...</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
 
-    <input id="nom_pizza" placeholder="Nom de la pizza"/><button id="creer_pizza">Créer pizza</button>
+    <!--
+    <div>
+      <h1>Créer une pizza</h1>
+      <input id="nom_pizza" placeholder="Nom de la pizza"/><button id="creer_pizza">Créer pizza</button>
 
-    <br />
+      <br />
 
-    <span id="zone_ingredients"></span>
+      <span id="zone_ingredients"></span>
 
-    <br />
+      <br />
 
-    <button id="enregistrer_pizza">Enregistrer pizza</button><button id="annuler">Annuler</button>
+      <button id="enregistrer_pizza">Enregistrer pizza</button><button id="annuler">Annuler</button>
 
-    <p id="contenu_pizza"></p>
+      <p id="contenu_pizza"></p>
+    </div>
+    -->
+
+    <h1>Détails de la pizza</h1>
+    <label>Nom : <input id="nom_pizza" /></label><br />
+    <h2>Garnitures</h2>
+
+    <div style="width: 200px; height: 400px; float:left" class="jumbotron"></div>
+    <div style="width: 200px; height: 400px; margin-left: 210px" class="jumbotron" id="liste_garnitures"></div>
+
 
     <!--
-    <table>
-      <tr>
-        <td colspan="3">NOM_PIZZA</td>
+    <table id="liste_garnitures">
+      <tr class="ligne_garniture">
+        <td>SAUCE_TOMATE</td>
+        <td>
+          <select>
+            <option>0</option>
+            <option selected>1</option>
+            <option>2</option>
+          </select>
+        </td>
       </tr>
-      <tr>
-        <td></td>
+      <tr class="ligne_garniture">
+        <td>MOZZARELLA</td>
+        <td>
+          <select>
+            <option>0</option>
+            <option selected>1</option>
+            <option>2</option>
+          </select>
+        </td>
       </tr>
-      <tr>
-        <td></td>
+      <tr class="ligne_garniture">
+        <td>CHAMPIGNONS</td>
+        <td>
+          <select>
+            <option>0</option>
+            <option selected>1</option>
+            <option>2</option>
+          </select>
+        </td>
+      </tr>
+      <tr id="ligne_ajouter_garniture">
+        <td>
+          <select id="liste_garnitures_disponibles">
+            <option value="">(Choisir une garniture)</option>
+          </select>
+        </td>
+        <td>
+          <button id="bouton_ajouter_garniture">Ajouter</button>
+        </td>
       </tr>
     </table>
     -->
+
+    <button id="boutton_enregistrer" class="btn btn-success">Enregistrer la modification</button><button id="bouton_annuler" class="btn btn-warning">Annuler la modification</button>
+
 
     <script src="build.js"></script>
 
   </body>
 </html>
+
