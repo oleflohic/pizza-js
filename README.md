@@ -1,3 +1,3 @@
 # pizza-js
 
-J4qrrive sur le projet /
+J'arrive sur le projet /
