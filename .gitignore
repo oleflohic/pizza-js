@@ -39,3 +39,6 @@ jspm_packages
 # Node modules directories
 node_modules
 static/build.js
+
+# VS Code
+.vscode
