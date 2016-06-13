@@ -1,36 +1,121 @@
 <html>
-  <head>
-    <title>...</title>
-  </head>
-  <body>
 
-    <input id="nom_pizza" placeholder="Nom de la pizza"/><button id="creer_pizza">Créer pizza</button>
+<!--<head>
+  <title>...</title>
+</head>
+<body>
+  <input id="nom_pizza" placeholder="Nom de la pizza" /><button id="creer_pizza">Créer pizza</button>
+  <br />
+  <span id="zone_ingredients"></span>
+  <br />
+  <button id="enregistrer_pizza">Enregistrer pizza</button><button id="annuler">Annuler</button>
+  <p id="contenu_pizza"></p>-->
 
-    <br />
 
-    <span id="zone_ingredients"></span>
+<!DOCTYPE html>
+<html>
 
-    <br />
+<head>
+  <meta charset="utf-8">
+  <script lang="javascript"></script>
+  <!--<script src="editeur-pizza.js" type="text/javascript"></script>-->
+  <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 
-    <button id="enregistrer_pizza">Enregistrer pizza</button><button id="annuler">Annuler</button>
+  <script>
+    $(function() {
+        var $list, $newItemForm;
+        $list = $('ul');
+        $newItemForm = $('#newItemForm');
+        $newItemForm.on('submit', function(e) {
+          e.preventDefault(); // Annule l'évènement s'il est annulable, sans stopper sa propagation.
+          var text = $('input:text').val();
+          $list.append('<li>' + text + '</li>');
+          $('input:text').val('');
+        });
+        $list.on('click', 'li', function() {
+          $(this).remove();
+        });
+    });
 
-    <p id="contenu_pizza"></p>
 
-    <!--
-    <table>
-      <tr>
-        <td colspan="3">NOM_PIZZA</td>
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-    </table>
-    -->
+function Lien(){
+   i = document.NomPizzas.selectedIndex;
+   if (i == 0) return;
+   url = document.NomPizzas.option[i].value;
+   parent.location.href=url;
+ }
+ 
+  </script>
+</head>
 
-    <script src="build.js"></script>
 
-  </body>
+
+<body>
+  <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Pizzas</h3>
+        </div>
+        <div class="col-md-12" id="pizzas"></div>
+        <div class="col-md-12">
+          <button id="newPizza" class="btn">Nouvelle pizza</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Pizza</h3>
+          <input id="pizzaName" type="text" class="form-control">
+          <br>
+          <div class="well" id="pizzaToppings"></div>
+          <button id="savePizza" class="btn">Enregistrer</button>
+        </div>
+        <div class="col-md-4">
+          <h3>Liste des ingrédients</h3>
+          <div id="toppings"></div>
+        </div>
+      </div>
+
+    </div>
+      
+      
+      
+      <table>
+        <tr>
+          <td>Ingrédients</td>
+          <td>Veuillez choisir la quantité</td>
+        </tr>
+        <tr>
+          <td>Jambon</td>
+          <td><input type="number"></td>
+        </tr>
+        <br> </br>
+        <tr>
+          <td>Crème</td>
+          <td><input type="number"></td>
+        </tr>
+        <br> </br>
+        <tr>
+          <td>Tomate</td>
+          <td><input type="number"></td>
+        </tr>
+        <br> </br>
+        <tr>
+          <td>Potatoes</td>
+          <td><input type="number"></td>
+        </tr>
+        <br> </br>
+      </table>
+
+
+      <!--<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+   Sauvegarder
+</button>
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+  Annuler 
+</button>-->
+    
+<script src="build.js"></script>
+</body>
 </html>
